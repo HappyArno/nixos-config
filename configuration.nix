@@ -103,7 +103,40 @@
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
+    git
+    vscodium
+    v2rayn
+    nix-tree
   ];
+
+  # Enable flakes and nix-command
+  nix.settings.experimental-features = [ "flakes" "nix-command" ];
+
+  # Set the substituters for Nix store
+  nix.settings.substituters = [
+    "https://mirror.sjtu.edu.cn/nix-channels/store/"
+    "https://cache.nixos.org/"
+  ];
+
+  # Set the input method
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = with pkgs; [
+        kdePackages.fcitx5-chinese-addons
+        kdePackages.fcitx5-qt
+        kdePackages.fcitx5-configtool
+        fcitx5-gtk
+        fcitx5-pinyin-zhwiki
+        fcitx5-pinyin-moegirl
+      ];
+    };
+  };
+
+  # Install nix-ld
+  programs.nix-ld.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
