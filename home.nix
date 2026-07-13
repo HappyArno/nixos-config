@@ -11,6 +11,14 @@
     vscodium
     v2rayn
     nix-tree
+    # C++
+    (lib.hiPrio gcc_latest)
+    llvmPackages_latest.clang
+    llvmPackages_latest.clang-tools
+    cmake
+    # Python
+    python3
+    uv
   ];
 
   # This value determines the Home Manager release that your
