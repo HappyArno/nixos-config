@@ -135,6 +135,11 @@
   # Install nix-ld
   programs.nix-ld.enable = true;
 
+  # Enable btrfs compression
+  fileSystems."/".options = [
+    "compress=zstd:3"
+  ];
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
