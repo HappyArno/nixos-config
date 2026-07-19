@@ -11,6 +11,9 @@
     vscodium
     v2rayn
     nix-tree
+    ncdu
+    btdu
+    pciutils
     # C++
     (lib.hiPrio gcc_latest)
     llvmPackages_latest.clang
@@ -19,6 +22,11 @@
     # Python
     python3
     uv
+    # Gaming
+    heroic
+    umu-launcher
+    protonplus
+    mangohud
   ];
 
   # This value determines the Home Manager release that your

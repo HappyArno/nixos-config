@@ -111,7 +111,7 @@
 
   # Set the substituters for Nix store
   nix.settings.substituters = [
-    "https://mirror.sjtu.edu.cn/nix-channels/store/"
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     "https://cache.nixos.org/"
   ];
 
@@ -139,6 +139,32 @@
   fileSystems."/".options = [
     "compress=zstd:3"
   ];
+
+  # Gaming
+  # Enable hardware accelerated graphics drivers
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+  # Set the video drivers
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    # Use open-source kernel modules
+    open = true;
+    # Wayland requires kernel mode setting (KMS) to be enabled
+    modesetting.enable = true;
+    # Configure PRIME in order to make the dedicated NVIDIA GPU work properly with the integrated GPU
+    prime = {
+      amdgpuBusId = "PCI:5@0:0:0";
+      nvidiaBusId = "PCI:1@0:0:0";
+      # Enable offload mode
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+    };
+  };
+  programs.gamemode.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
