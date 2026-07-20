@@ -27,6 +27,9 @@
     umu-launcher
     protonplus
     mangohud
+    # Video
+    mpv
+    kdePackages.kdenlive
   ];
 
   # This value determines the Home Manager release that your
