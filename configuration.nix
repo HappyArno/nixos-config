@@ -165,6 +165,8 @@
     };
   };
   programs.gamemode.enable = true;
+  # Enable ntsync
+  boot.kernelModules = [ "ntsync" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
