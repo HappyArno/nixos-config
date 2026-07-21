@@ -173,6 +173,11 @@
     stdenv
   ];
 
+  # Limit the maximum disk space used by systemd journal logs
+  services.journald.extraConfig = "SystemMaxUse=500M";
+  # Limit the maximum disk space used by systemd core dumps
+  systemd.coredump.settings.Coredump.MaxUse = "500M";
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
