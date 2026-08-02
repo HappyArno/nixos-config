@@ -87,8 +87,8 @@
     description = "Arno";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
+      # kdePackages.kate
+      # thunderbird
     ];
   };
 
@@ -177,6 +177,9 @@
   services.journald.extraConfig = "SystemMaxUse=500M";
   # Limit the maximum disk space used by systemd core dumps
   systemd.coredump.settings.Coredump.MaxUse = "500M";
+
+  # Enable the magic SysRq key
+  boot.kernel.sysctl."kernel.sysrq" = 1;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
