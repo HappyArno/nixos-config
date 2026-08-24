@@ -30,6 +30,8 @@
     # Video
     pkgs-unstable.mpv
     pkgs-unstable.kdePackages.kdenlive
+    # AI
+    (pkgs-unstable.llama-cpp.override { cudaSupport = true; })
   ];
 
   # This value determines the Home Manager release that your
