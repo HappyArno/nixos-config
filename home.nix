@@ -8,8 +8,8 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    vscodium
-    v2rayn
+    pkgs-unstable.vscodium
+    pkgs-unstable.v2rayn
     nix-tree
     ncdu
     btdu
@@ -23,13 +23,13 @@
     python3
     uv
     # Gaming
-    heroic
-    umu-launcher
-    protonplus
-    mangohud
+    pkgs-unstable.heroic
+    pkgs-unstable.umu-launcher
+    pkgs-unstable.protonplus
+    pkgs-unstable.mangohud
     # Video
-    mpv
-    kdePackages.kdenlive
+    pkgs-unstable.mpv
+    pkgs-unstable.kdePackages.kdenlive
   ];
 
   # This value determines the Home Manager release that your
