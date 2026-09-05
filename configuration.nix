@@ -88,7 +88,7 @@
   users.users."arno" = {
     isNormalUser = true;
     description = "Arno";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       # kdePackages.kate
       # thunderbird
@@ -197,6 +197,9 @@
     enable = true;
     powerOnBoot = true;
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
