@@ -199,8 +199,12 @@
     powerOnBoot = true;
   };
 
+  # Enable virt-manager
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+
+  # Enable zram
+  zramSwap.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
