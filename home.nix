@@ -29,10 +29,13 @@
     pkgs-unstable.mangohud
     pkgs-unstable.steam-run-free
     # Video
-    pkgs-unstable.mpv
-    pkgs-unstable.kdePackages.kdenlive
+    mpv
+    kdePackages.kdenlive
     # AI
     (pkgs-unstable.llama-cpp.override { cudaSupport = true; })
+    # Android
+    android-tools
+    scrcpy
   ];
 
   # This value determines the Home Manager release that your
