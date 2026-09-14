@@ -27,7 +27,6 @@
     pkgs-unstable.umu-launcher
     pkgs-unstable.protonplus
     pkgs-unstable.mangohud
-    pkgs-unstable.steam-run-free
     # Video
     mpv
     kdePackages.kdenlive
