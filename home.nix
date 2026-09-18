@@ -8,34 +8,11 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    pkgs-unstable.vscodium
-    pkgs-unstable.v2rayn
     nix-tree
     ncdu
     btdu
     pciutils
-    # C++
-    (lib.hiPrio gcc_latest)
-    gdb
-    llvmPackages_latest.clang
-    llvmPackages_latest.clang-tools
-    cmake
-    # Python
-    python3
-    uv
-    # Gaming
-    pkgs-unstable.heroic
-    pkgs-unstable.umu-launcher
-    pkgs-unstable.protonplus
-    pkgs-unstable.mangohud
-    # Video
     mpv
-    kdePackages.kdenlive
-    # AI
-    (pkgs-unstable.llama-cpp.override { cudaSupport = true; })
-    # Android
-    android-tools
-    scrcpy
   ];
 
   # This value determines the Home Manager release that your

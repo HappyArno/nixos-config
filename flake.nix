@@ -20,7 +20,8 @@
           inherit inputs;
         };
         modules = [
-          ./configuration.nix
+          ./hosts/laptop
+          ./modules
           ./pkgs-unstable.nix
           home-manager.nixosModules.home-manager
           ({ pkgs-unstable, ... }: {

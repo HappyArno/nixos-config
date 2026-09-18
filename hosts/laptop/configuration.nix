@@ -88,7 +88,7 @@
   users.users."arno" = {
     isNormalUser = true;
     description = "Arno";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       # kdePackages.kate
       # thunderbird
@@ -128,23 +128,6 @@
     ];
   };
 
-  # Set the input method
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5 = {
-      waylandFrontend = true;
-      addons = with pkgs; [
-        kdePackages.fcitx5-chinese-addons
-        kdePackages.fcitx5-qt
-        kdePackages.fcitx5-configtool
-        fcitx5-gtk
-        fcitx5-pinyin-zhwiki
-        fcitx5-pinyin-moegirl
-      ];
-    };
-  };
-
   # Install nix-ld
   programs.nix-ld.enable = true;
 
@@ -153,13 +136,7 @@
     "compress=zstd:3"
   ];
 
-  # Gaming
-  # Enable hardware accelerated graphics drivers
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-  };
-  # Set the video drivers
+  # Enable the NVIDIA video driver
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     # Use open-source kernel modules
@@ -177,9 +154,6 @@
       };
     };
   };
-  programs.gamemode.enable = true;
-  # Enable ntsync
-  boot.kernelModules = [ "ntsync" ];
 
   # Cache stdenv
   system.extraDependencies = with pkgs; [
@@ -199,10 +173,6 @@
     enable = true;
     powerOnBoot = true;
   };
-
-  # Enable virt-manager
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
 
   # Enable zram
   zramSwap.enable = true;
