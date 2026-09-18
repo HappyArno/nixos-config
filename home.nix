@@ -16,6 +16,7 @@
     pciutils
     # C++
     (lib.hiPrio gcc_latest)
+    gdb
     llvmPackages_latest.clang
     llvmPackages_latest.clang-tools
     cmake
