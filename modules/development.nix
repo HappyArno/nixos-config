@@ -13,5 +13,7 @@
     # Python
     python3
     uv
+    # Reverse
+    ghidra-bin
   ];
 }
