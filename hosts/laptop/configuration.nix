@@ -98,6 +98,12 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  # Install nh.
+  programs.nh = {
+    enable = true;
+    flake = "/home/arno/nixos-config";
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
