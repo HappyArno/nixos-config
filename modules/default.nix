@@ -7,5 +7,6 @@
     ./ai.nix
     ./virtualization.nix
     ./android.nix
+    ./ios.nix
   ];
 }
