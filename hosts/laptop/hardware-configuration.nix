@@ -16,6 +16,7 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/83d40f92-4274-4f7f-b471-31f5b9332ce2";
       fsType = "btrfs";
+      options = [ "subvol=nixos" ];
     };
 
   fileSystems."/home" =
@@ -34,6 +35,36 @@
     { device = "/dev/disk/by-uuid/C0F2-0DD9";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  fileSystems."/srv" =
+    { device = "/dev/disk/by-uuid/83d40f92-4274-4f7f-b471-31f5b9332ce2";
+      fsType = "btrfs";
+      options = [ "subvol=srv" ];
+    };
+
+  fileSystems."/tmp" =
+    { device = "/dev/disk/by-uuid/83d40f92-4274-4f7f-b471-31f5b9332ce2";
+      fsType = "btrfs";
+      options = [ "subvol=tmp" ];
+    };
+
+  fileSystems."/var/tmp" =
+    { device = "/dev/disk/by-uuid/83d40f92-4274-4f7f-b471-31f5b9332ce2";
+      fsType = "btrfs";
+      options = [ "subvol=var/tmp" ];
+    };
+
+  fileSystems."/var/lib/machines" =
+    { device = "/dev/disk/by-uuid/83d40f92-4274-4f7f-b471-31f5b9332ce2";
+      fsType = "btrfs";
+      options = [ "subvol=var/lib/machines" ];
+    };
+
+  fileSystems."/var/lib/portables" =
+    { device = "/dev/disk/by-uuid/83d40f92-4274-4f7f-b471-31f5b9332ce2";
+      fsType = "btrfs";
+      options = [ "subvol=var/lib/portables" ];
     };
 
   swapDevices = [ ];
