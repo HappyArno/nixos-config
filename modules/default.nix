@@ -8,5 +8,6 @@
     ./virtualization.nix
     ./android.nix
     ./ios.nix
+    ./flatpak.nix
   ];
 }
