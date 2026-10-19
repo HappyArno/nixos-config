@@ -10,6 +10,7 @@
     llvmPackages_latest.clang
     llvmPackages_latest.clang-tools
     cmake
+    gnumake
     # Python
     python3
     uv
