@@ -15,6 +15,6 @@
     python3
     uv
     # Reverse
-    ghidra-bin
+    # ghidra-bin
   ];
 }

@@ -5,7 +5,7 @@
     ./development.nix
     ./gaming.nix
     ./ai.nix
-    ./virtualization.nix
+    # ./virtualization.nix
     ./android.nix
     ./ios.nix
     ./flatpak.nix
